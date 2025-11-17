@@ -1,0 +1,2 @@
+I need to follow this material to build a small AR MVP that detects a flower using the device camera and overlays its anatomical parts—such as the pistil, stamen, sepal, and others—in real time. When the camera recognizes the flower, the app should identify the main structures and display them as AR labels or annotations.
+https://theglobalmontessorinetwork.org/resource/elementary/parts-of-flower-english/
