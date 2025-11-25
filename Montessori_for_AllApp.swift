@@ -10,9 +10,10 @@ import SwiftData
 
 @main
 struct Montessori_for_AllApp: App {
+ 
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Flower.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,7 +26,10 @@ struct Montessori_for_AllApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            // it's created here
+            FlowerView()
+            // "Thread 1: Fatal error: No ObservableObject of type FlowerStore found. A View.environmentObject(_:) for FlowerStore may be missing as an ancestor of this view." if it's not here it shows this error
+            .environmentObject(FlowerStore(modelContainer: sharedModelContainer))
         }
         .modelContainer(sharedModelContainer)
     }

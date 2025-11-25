@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		258FE9632ECBC3A4004EE1E3 /* Flower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258FE9622ECBC3A4004EE1E3 /* Flower.swift */; };
+		258FEA012ECF923A004EE1E3 /* Leaf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258FEA002ECF923A004EE1E3 /* Leaf.swift */; };
+		25F9D3252ED4D9E30097703B /* Montessori_for_AllApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F9D3212ED4D9E30097703B /* Montessori_for_AllApp.swift */; };
+		25F9D36C2ED571DB0097703B /* FlowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F9D36B2ED571DB0097703B /* FlowerView.swift */; };
+		25F9D36F2ED577910097703B /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F9D36E2ED577910097703B /* DataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +36,10 @@
 		258FE9442ECBB7E4004EE1E3 /* Montessori for AllTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Montessori for AllTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		258FE94E2ECBB7E5004EE1E3 /* Montessori for AllUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Montessori for AllUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		258FE9622ECBC3A4004EE1E3 /* Flower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flower.swift; sourceTree = "<group>"; };
+		258FEA002ECF923A004EE1E3 /* Leaf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leaf.swift; sourceTree = "<group>"; };
+		25F9D3212ED4D9E30097703B /* Montessori_for_AllApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Montessori_for_AllApp.swift; sourceTree = "<group>"; };
+		25F9D36B2ED571DB0097703B /* FlowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerView.swift; sourceTree = "<group>"; };
+		25F9D36E2ED577910097703B /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -80,6 +88,7 @@
 		258FE92C2ECBB7E2004EE1E3 = {
 			isa = PBXGroup;
 			children = (
+				25F9D3212ED4D9E30097703B /* Montessori_for_AllApp.swift */,
 				258FE9642ECBC3D1004EE1E3 /* Infant Toddler 0 - 3 */,
 				258FE9652ECBC3EE004EE1E3 /* Early Childhood 3 - 6 */,
 				258FE9662ECBC40C004EE1E3 /* Elementary 6 - 12 */,
@@ -103,7 +112,7 @@
 		258FE9612ECBC34E004EE1E3 /* Botany */ = {
 			isa = PBXGroup;
 			children = (
-				258FE9622ECBC3A4004EE1E3 /* Flower.swift */,
+				25F9D36D2ED575530097703B /* Model */,
 			);
 			path = Botany;
 			sourceTree = "<group>";
@@ -126,8 +135,27 @@
 			isa = PBXGroup;
 			children = (
 				258FE9612ECBC34E004EE1E3 /* Botany */,
+				25F9D36A2ED571B90097703B /* Views */,
 			);
 			path = "Elementary 6 - 12";
+			sourceTree = "<group>";
+		};
+		25F9D36A2ED571B90097703B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				25F9D36B2ED571DB0097703B /* FlowerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		25F9D36D2ED575530097703B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				258FEA002ECF923A004EE1E3 /* Leaf.swift */,
+				258FE9622ECBC3A4004EE1E3 /* Flower.swift */,
+				25F9D36E2ED577910097703B /* DataStore.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +302,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25F9D36F2ED577910097703B /* DataStore.swift in Sources */,
+				258FEA012ECF923A004EE1E3 /* Leaf.swift in Sources */,
+				25F9D36C2ED571DB0097703B /* FlowerView.swift in Sources */,
+				25F9D3252ED4D9E30097703B /* Montessori_for_AllApp.swift in Sources */,
 				258FE9632ECBC3A4004EE1E3 /* Flower.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
