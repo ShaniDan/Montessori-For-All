@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftData
+// I don't need to import combine when I use @Observable
 import Combine
 
 /*
@@ -21,12 +22,18 @@ import Combine
  @StateObject
  */
 
-// This handles the interaction with SwiftData
+// DataStore handles the interaction with SwiftData
 @MainActor
 final class FlowerStore: ObservableObject {
-    // view update
+    ///
+    /// An observable object is used with @Published and @EnvironmentObject
+    /// to read and write values across views. An .environmentObject instance is
+    /// placed at the top of the view hierarchy. In this case in the WindowGroup
+    ///
     @Published private(set) var flowers: [Flower] = []
+    /// ModelContainer - An object that manages an app's schema and model storage configuration.
     private let modelContainer: ModelContainer
+    /// ModelContext - An object that enables you to fetch, insert, and delete models, and save any changes to disk.
     private var modelContext: ModelContext {modelContainer.mainContext}
     
     
@@ -34,14 +41,6 @@ final class FlowerStore: ObservableObject {
         self.modelContainer = modelContainer
         reload()
     }
-    
-    func reload() {
-             do {
-                 flowers = try modelContext.fetch(FetchDescriptor<Flower>())
-             } catch {
-                 print("Failed to load flowers: \(error)")
-             }
-         }
     
     func save(id: UUID, name: String, type: String) {
         do {
@@ -55,5 +54,17 @@ final class FlowerStore: ObservableObject {
         } catch {
            print("Not Saved")
         }
+    }
+
+    func reload() {
+             do {
+                 flowers = try modelContext.fetch(FetchDescriptor<Flower>())
+             } catch {
+                 print("Failed to load flowers: \(error)")
+             }
+         }
+    
+    func delete(flower: Flower) {
+        modelContext.delete(flower)
     }
 }
