@@ -13,41 +13,40 @@ import SwiftData
 
 struct FlowerDetailView: View {
     // @StateObject creates and owns the object
-    // @EnvironmentObject receives the object from above
+    // @EnvironmentObject receives the object from the environment (root view)
     // But @StateObject shows error that I need to explicitly define modelContainer
     
-    //    @StateObject var viewModel = FlowerViewModel()
+    @StateObject var viewModel = FlowerViewModel()
     
     @EnvironmentObject var flowerStore: FlowerStore
+    // need to understand how this works deeper, is it a binding?
     let flower: Flower
     
     var body: some View {
-        ZStack {
-            Image("Chamomile")
-                .resizable()
-                .opacity(0.3)
-                .ignoresSafeArea()
-            VStack {
-                
-                Text("Hi I'm \(flower.name) 🌼")
-                
-                Text(" \nChamomile is a flower native to Europe and Asia that now grows widely in the U.S. There are two main types: German chamomile (from southern/eastern Europe) and Roman chamomile (native to northern Africa and parts of Europe, with an apple-like scent).")
-                    .multilineTextAlignment(.leading)
-                
-                Text("\nTraditional Uses: Chamomile is commonly used to reduce anxiety and promote relaxation. It’s generally safe as a tea and likely safe for short-term use, though long-term safety is not well known.")
-                    .multilineTextAlignment(.leading)
-                
-                Text("\nIn Europe, chamomile is also used for wound healing and reducing inflammation. A 2021 study found chamomile helped wounds heal faster due to its high levels of phytochemicals.")
-                    .multilineTextAlignment(.leading)
-                
-                Text("\nA 2016 review showed chamomile has many benefits, including antioxidant, antimicrobial, anti-inflammatory, and antidiabetic effects. It may also help with knee osteoarthritis, ulcerative colitis, PMS, and digestive issues.")
-                    .multilineTextAlignment(.leading)
+        NavigationStack {
+            ZStack {
+                Image("Chamomile")
+                    .resizable()
+                    .opacity(0.3)
+                    .ignoresSafeArea()
+                VStack {
+                    // this needs to have a binding
+                    NavigationLink(destination: UpdateView(flower: flower)) {
+                        Text("Update")
+                    }
+                    Text("Hi I'm \(flower.name) 🌼")
+                        .padding(10)
+                    Text("\(flower.flowerDescription)")
+                        .multilineTextAlignment(.leading)
+                        .lineSpacing(5)
+                        .padding()
                     
+                }
+                .font(Font.custom("DragonHunter", size: 15.0))
+                .padding(10)
+                .foregroundStyle(Color("NavyBlue"))
+                .bold()
             }
-            .font(Font.custom("DragonHunter", size: 15.0))
-            .padding(10)
-            .foregroundStyle(Color("NavyBlue"))
-            .bold()
         }
     }
 }

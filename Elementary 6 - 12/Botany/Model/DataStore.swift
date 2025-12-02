@@ -9,19 +9,6 @@ import Foundation
 import SwiftData
 // I don't need to import combine when I use @Observable
 import Combine
-
-/*
- tundsdev
- why would you use each one, in what situation (cases)
- ObservableObject
- @ObservedObject
- @Published
- 
- @State
- @Binding
- @StateObject
- */
-
 // DataStore handles the interaction with SwiftData
 @MainActor
 final class FlowerStore: ObservableObject {
@@ -42,10 +29,10 @@ final class FlowerStore: ObservableObject {
         reload()
     }
     
-    func save(id: UUID, name: String, type: String) {
+    func save(id: UUID, name: String, flowerDescription: String) {
         do {
             let items = Flower(
-                id: id, name: name, type: type
+                id: id, name: name, flowerDescription: flowerDescription
             )
             modelContext.insert(items)
             try modelContext.save()
@@ -53,6 +40,29 @@ final class FlowerStore: ObservableObject {
             print("item saved \(items.name), \(items.id)")
         } catch {
            print("Not Saved")
+        }
+    }
+    
+    func update(id: UUID, newName: String, newFlowerDescription: String) {
+        do {
+            let descriptor = FetchDescriptor<Flower>(
+                predicate: #Predicate { $0.id == id }
+            )
+            
+            if let existingFlower = try modelContext.fetch(descriptor).first {
+                existingFlower.name = newName
+                existingFlower.flowerDescription = newFlowerDescription
+                
+                try modelContext.save()
+                reload()
+                
+                print("Updated flower: \(existingFlower.name)")
+            } else {
+                print("Flower not found")
+            }
+            
+        } catch {
+            print("Update failed: \(error)")
         }
     }
 

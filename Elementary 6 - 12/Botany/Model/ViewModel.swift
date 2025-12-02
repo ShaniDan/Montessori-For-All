@@ -10,7 +10,7 @@ import SwiftData
 import Combine
 
 class FlowerViewModel: ObservableObject {
-    @Published var flower = Flower(id: UUID(), name: "Hello", type: "World")
+    @Published var flower = Flower(id: UUID(), name: "Hello", flowerDescription: "World")
     
     
 }

@@ -20,12 +20,12 @@ import SwiftData
 class Flower: Identifiable {
     @Attribute(.unique) var id: UUID
     var name: String
-    var type: String
+    var flowerDescription: String
     
-    init(id: UUID, name: String, type: String ) {
+    init(id: UUID, name: String, flowerDescription: String ) {
         self.id = UUID()
         self.name = name
-        self.type = type
+        self.flowerDescription = flowerDescription
     }
 }
 

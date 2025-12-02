@@ -10,9 +10,10 @@ import SwiftUI
 struct FlowerView: View {
     // @State is used to change items within the view
     @State var name: String = ""
-    @State var type: String = ""
+    @State var flowerDescription: String = ""
     @State var colorChange: Color = .red
     // I need to inject environmentObject to the FlowerView struct that's in the main App struct
+    //
     @EnvironmentObject var flowerStore: FlowerStore
     
     var id: UUID = UUID()
@@ -29,9 +30,19 @@ struct FlowerView: View {
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(Color.blue)
                 )
+            ScrollView {
+                TextField("flowerDescription", text: $flowerDescription)
+                    .frame(width: 250, height: 200)
+                    .padding()
+                    .multilineTextAlignment(.leading)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.blue)
+                    )
+            }
             
             Button("Save") {
-                flowerStore.save(id: id, name: name, type: type)
+                flowerStore.save(id: id, name: name, flowerDescription: flowerDescription)
             }
             
             Button() {

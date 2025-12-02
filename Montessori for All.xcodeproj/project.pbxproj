@@ -14,6 +14,7 @@
 		25F9D36F2ED577910097703B /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F9D36E2ED577910097703B /* DataStore.swift */; };
 		25F9D3942EDE22090097703B /* FlowerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F9D3932EDE22090097703B /* FlowerDetailView.swift */; };
 		25F9D3962EDE26810097703B /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F9D3952EDE26810097703B /* ViewModel.swift */; };
+		25F9D39A2EDE5ABE0097703B /* UpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F9D3992EDE5ABE0097703B /* UpdateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		25F9D36E2ED577910097703B /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		25F9D3932EDE22090097703B /* FlowerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerDetailView.swift; sourceTree = "<group>"; };
 		25F9D3952EDE26810097703B /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		25F9D3992EDE5ABE0097703B /* UpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -168,6 +170,7 @@
 			children = (
 				25F9D36B2ED571DB0097703B /* FlowerView.swift */,
 				25F9D3932EDE22090097703B /* FlowerDetailView.swift */,
+				25F9D3992EDE5ABE0097703B /* UpdateView.swift */,
 			);
 			path = FlowerView;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				258FEA012ECF923A004EE1E3 /* Leaf.swift in Sources */,
 				25F9D36C2ED571DB0097703B /* FlowerView.swift in Sources */,
 				25F9D3252ED4D9E30097703B /* Montessori_for_AllApp.swift in Sources */,
+				25F9D39A2EDE5ABE0097703B /* UpdateView.swift in Sources */,
 				25F9D3942EDE22090097703B /* FlowerDetailView.swift in Sources */,
 				258FE9632ECBC3A4004EE1E3 /* Flower.swift in Sources */,
 			);
